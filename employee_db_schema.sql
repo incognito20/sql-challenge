@@ -1,3 +1,5 @@
+--Schema for employee_db which creates table structure to import 6 related csvs
+
 -- Drop table if exists
 DROP TABLE titles;
 
@@ -6,8 +8,6 @@ CREATE TABLE titles (
   title_id VARCHAR(10) PRIMARY KEY,
   title VARCHAR(20) NOT NULL UNIQUE
 );
-
-select * from titles;
 
 
 -- Drop table if exists
@@ -25,8 +25,6 @@ CREATE TABLE employees (
   hire_date DATE NOT NULL
 );
 
-select * from employees;
-
 -- Drop table if exists
 DROP TABLE salaries;
 
@@ -37,8 +35,6 @@ CREATE TABLE salaries (
   salary FLOAT NOT NULL
 );
 
-select * from salaries;
-
 
 -- Drop table if exists
 DROP TABLE departments;
@@ -48,8 +44,6 @@ CREATE TABLE departments (
   dept_no VARCHAR(5) PRIMARY KEY,
   dept_name VARCHAR(20) NOT NULL UNIQUE
 );
-
-select * from departments;
 
 -- Drop table if exists
 DROP TABLE dept_manager;
@@ -63,8 +57,6 @@ CREATE TABLE dept_manager (
   PRIMARY KEY (dept_no, emp_no)
 );
 
-select * from dept_manager;
-
 -- Drop table if exists
 DROP TABLE dept_emp;
 
@@ -77,5 +69,5 @@ CREATE TABLE dept_emp (
   PRIMARY KEY (emp_no, dept_no)
 );
 
-select * from dept_emp;
+
 

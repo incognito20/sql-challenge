@@ -1,4 +1,5 @@
 --List the employee number, last name, first name, sex, and salary of each employee.
+--Joins employees and salaries
 
 SELECT employees.emp_no, employees.last_name, employees.first_name, employees.sex, salaries.salary
 FROM employees
@@ -12,6 +13,7 @@ FROM employees
 WHERE EXTRACT(YEAR FROM hire_date) = 1986;
 
 --List the manager of each department along with their department number, department name, employee number, last name, and first name.
+--Joins employees, dept_manager, departments. Identifies employee numbers in dept_manager
 
 SELECT employees.first_name AS "Manager First Name", employees.last_name AS "Manager Last Name",
 dept_manager.dept_no AS "Department Number", departments.dept_name AS "Department", employees.emp_no AS "Employee Number"
@@ -24,6 +26,7 @@ SELECT emp_no
 FROM dept_manager);
 
 --List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
+--Joins employees, dept_emp, and departments. Pulls every employee number from employees.
 
 SELECT employees.first_name AS "Employee First Name", employees.last_name AS "Employee Last Name", employees.emp_no AS "Employee Number",
 departments.dept_name AS "Department Name", dept_emp.dept_no AS "Department Number"
